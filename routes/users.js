@@ -8,6 +8,8 @@ const usersController = require('../controllers/users_controller')
 //Accessing the users profile page 
 router.get('/profile',usersController.profile);
 
+//Accessing the edit page
+router.get('/edit',usersController.edit)
 
 
 module.exports= router;

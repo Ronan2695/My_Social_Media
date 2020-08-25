@@ -10,6 +10,7 @@ console.log('router loaded')
 //accessing the controller
 router.get('/',homeController.home)
 router.get('/about',homeController.about)
+router.get('/contact',homeController.contact)
 //requiring the users routes.
 router.use('/users', require('./users'));
 //requiring the posts routes
