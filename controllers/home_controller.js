@@ -9,7 +9,9 @@
 //controller action for homepage
 module.exports.home = function(req,res){
 
-    return res.end('<h1>Express is up for Rohit!</h1>');
+    return res.render('home',{
+        title:'Social Media'
+    })
 
 }
 
