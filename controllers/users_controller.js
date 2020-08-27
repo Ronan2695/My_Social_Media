@@ -5,10 +5,26 @@ const User= require('../models/users')
 
 module.exports.profile=function(req,res){
 
-    return res.render('user_profile',{
+    if(req.cookies.user_id){
+        //if user is signed in
+        User.findById(req.cookies.user_id, function(err,user){
 
-        title:'profile'
-    });
+                if(user){
+
+                    return res.render('user_profile',{
+                        title:"User Profile",
+                        user:user
+                    })
+                }
+
+                return res.redirect('/users/sign-in');
+        }); 
+    }
+    else{
+
+        return res.redirect('/users/sign-in')
+    }
+
 }
 
 // //controller action for signup page.
