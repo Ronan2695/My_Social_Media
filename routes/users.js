@@ -8,9 +8,12 @@ const usersController = require('../controllers/users_controller')
 //Accessing the users profile page 
 router.get('/profile',usersController.profile);
 
-// //router for signin and signup page.
+//router actions for signin and signup page.
 router.get('/sign-in',usersController.signIn);
 router.get('/sign-up',usersController.signUp);
+
+//router action for signout
+router.get('/sign-out',usersController.signOut);
 
 //creating an user
 router.post('/create', usersController.create);
