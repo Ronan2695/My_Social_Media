@@ -8,8 +8,18 @@ module.exports.profile=function(req,res){
     });
 }
 
-module.exports.edit= function(req,res){
-    
-    return res.end('<h1> Welcome to the edit page </h1>')
-    
+// //controller action for signup page.
+module.exports.signUp= function(req,res){
+    return res.render('user_sign_up', {
+            title:'SocialMedia || Sign Up'
+    });
 }
+
+//controller action for signin page.
+module.exports.signIn = function(req,res){
+    return res.render('user_sign_in',{
+        title:'SocialMedia | Sign In'
+    });
+}
+
+

@@ -8,8 +8,9 @@ const usersController = require('../controllers/users_controller')
 //Accessing the users profile page 
 router.get('/profile',usersController.profile);
 
-//Accessing the edit page
-router.get('/edit',usersController.edit)
+// //router for signin and signup page.
+router.get('/sign-in',usersController.signIn);
+router.get('/sign-up',usersController.signUp);
 
 
 module.exports= router;
