@@ -13,6 +13,10 @@ module.exports.profile=function(req,res){
 
 // //controller action for signup page.
 module.exports.signUp= function(req,res){
+   //if signed in, redirect to profile page
+    if(req.isAuthenticated()){
+       return res.redirect('/users/profile')
+    }
     return res.render('user_sign_up', {
             title:'SocialMedia || Sign Up'
     });
@@ -20,6 +24,9 @@ module.exports.signUp= function(req,res){
 
 //controller action for signin page.
 module.exports.signIn = function(req,res){
+    if(req.isAuthenticated()){
+      return res.redirect('/users/profile')
+    }
     return res.render('user_sign_in',{
         title:'SocialMedia | Sign In'
     });
