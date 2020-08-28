@@ -65,3 +65,11 @@ module.exports.createSession= function (req,res){
 
     return res.redirect('/');
 }
+
+//signing out
+module.exports.destorySession= function(req,res){
+
+    req.logout(); //passport gives this to request
+
+    return res.redirect('/');
+}
