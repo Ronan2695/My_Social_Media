@@ -1,9 +1,8 @@
 <header>
 
-        <title>header.css</title>
+       
         <link rel="stylesheet" type="text/css" href="/css/header.css">
  
-    
         <div id="header-box">
     
             <span id="title"> SOCIAL MEDIA </span>
@@ -12,13 +11,13 @@
             
             <span id="username"> <%= user.name %> </span>
     
-                <a href="/users/sign-out" class="login2"> SIGN OUT </a>
+                <a href="/users/sign-out" id="login2"> SIGN OUT </a>
     
             <%}else{%>
     
-                <a href="/users/sign-in" class="login"> SIGN IN </a>
+                <a href="/users/sign-in" id="login"> SIGN IN </a>
     
-                <a href="/users/sign-up" class="login1"> SIGN UP </a>
+                <a href="/users/sign-up" id="login1"> SIGN UP </a>
     
             <% } %>
     
