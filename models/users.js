@@ -1,7 +1,7 @@
 //User Schema for login.
 const mongoose = require('mongoose');
 
-const userSchmema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     
     email:{
         type:String,
@@ -21,6 +21,8 @@ const userSchmema = new mongoose.Schema({
     timestamps: true
 });
 
-const User= mongoose.model('User',userSchmema)
+
+//We are telling that this is a model in the database
+const User= mongoose.model('User',userSchema)
 
 module.exports=User
