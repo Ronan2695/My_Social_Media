@@ -1,0 +1,77 @@
+body
+{
+
+    margin:0;
+    
+}
+
+
+#header-box
+{	
+
+	height: 8vh;
+	width: 100vw;
+	border:1px solid black;
+	background: rgb(48,117,151);
+}
+
+#title
+{
+	position: absolute;
+	top:2%;
+	left:4%;
+	font-size: 35px;
+	font-weight: bolder;
+	color: rgb(255,255,255);
+}
+
+.login
+{	
+	position: absolute;
+	top:3%;
+	left:80%;
+	font-size: 20px;
+	font-weight: bolder;
+	color: rgb(255,255,255);
+	text-decoration: none;
+
+
+}
+
+
+.login1
+{	
+	position: absolute;
+	top:3%;
+	left:88%;
+	font-size: 20px;
+	font-weight: bolder;
+	color: rgb(255,255,255);
+	text-decoration: none;
+
+
+}
+
+.login2
+{
+    position: absolute;
+	top:3%;
+	left:80%;
+	font-size: 20px;
+	font-weight: bolder;
+	color: rgb(255,255,255);
+    text-decoration: none;
+    
+}
+
+#username
+{
+	position: absolute;
+	top:3%;
+	left:75%;
+	font-size: 20px;
+	font-weight: bolder;
+	color: rgb(255,255,255);
+	text-decoration: none;
+
+}
