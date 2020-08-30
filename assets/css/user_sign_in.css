@@ -1,0 +1,57 @@
+#sign-in-box
+{
+
+	height: 300px;
+	width: 500px;
+	border:1px solid rgb(48 115 171);
+	margin: 0 auto;
+	margin-top: 140px;
+	background-color: rgb(48 115 171);
+}
+
+#ema
+{
+	color: white;
+	position: absolute;
+	top:28%;
+	left:38%;
+	font-size:17px;
+	font-weight: bolder;
+}
+
+#pass
+{
+	color: white;
+	position: absolute;
+	top:38%;
+	left:38%;
+	font-size:17px;
+	font-weight: bolder;
+
+}
+
+#pass p
+{
+	margin-top: 25px;
+}
+
+#sub
+{
+	position: absolute;
+	top:54%;
+	left:38%;
+}
+
+#sub button
+{
+	margin-top:10px;
+	height: 30px;
+	width: 350px; 
+
+}
+
+.size
+{
+	width:340px; 
+	height: 30px;
+}

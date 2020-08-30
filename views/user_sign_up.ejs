@@ -1,4 +1,4 @@
-<h1>Sign Up</h1>
+<!-- <h1>Sign Up</h1>
 
 <form action="/users/create" method="POST">
 
@@ -8,4 +8,43 @@
     <input type="password" name="confirm_password" placeholder="confirm password" required>
     <input type="submit" value="Sign Up"> 
 
-</form>
+</form> -->
+
+<link rel="stylesheet" type="text/css" href="/css/user_sign_up.css">
+
+<div id=sign-up-box>
+		
+    <form action="/users/create" method="POST">
+    
+        <div id="nam">
+            <p id="name-title">Name</p>
+        <input type="text" name="name" class="size" placeholder="Enter Name">
+        </div>
+
+        <div id="ema2">
+            <p id="password-title">Email</p>
+        <input type="email" name="email" class="size" placeholder="Enter email">
+        </div>
+
+
+        <div id="pass2">
+            <p id="password-title2">Password</p>
+    
+        <input type="password" name="password" class="size" placeholder="Password">
+        
+        </div>
+
+        <div id="pass3">
+            <p id="password-title2">Confirm Password</p>
+    
+     <input type="password" name="confirm_password" class="size" placeholder="Confirm Password">
+        
+        </div>
+
+
+        <button type="submit" id="sub2"> Log In</button>
+    
+    </form>
+
+
+</div>
