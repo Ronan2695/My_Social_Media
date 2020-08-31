@@ -4,12 +4,26 @@
 
 //}
 
-//controller action for homepage
-module.exports.home = function(req,res){
-    return res.render('home',{
-        title:'Social Media'
-    })
+const Post = require('../models/posts')
 
+//controller action for homepage
+// module.exports.home = function(req,res){
+
+    // Post.find({},function(err,posts){
+    //     return res.render('home',{
+    //         title:'Social_Media|Home',
+    //         posts:posts
+    //     });
+    // });
+
+    //populating the user object using populate function
+module.exports.home = function(req,res){
+    Post.find({}).populate('user').exec(function(err,posts){
+        return res.render('home',{
+            title:'Social_Media|Home',
+            posts:posts
+        });
+    })
 }
 
 //controller action for userspage
