@@ -18,7 +18,15 @@ const Post = require('../models/posts')
 
     //populating the user object using populate function
 module.exports.home = function(req,res){
-    Post.find({}).populate('user').exec(function(err,posts){
+    Post.find({})
+    .populate('user')
+    .populate({
+        path:'comments',
+        populate:{
+            path:'user'
+        }
+    })
+    .exec(function(err,posts){
         return res.render('home',{
             title:'Social_Media|Home',
             posts:posts

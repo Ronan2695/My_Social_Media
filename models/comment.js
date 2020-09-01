@@ -20,7 +20,6 @@ const commentSchema = new mongoose.Schema({
         ref:'Post'
     }
 
-
 },{
     timestamps:true
 });
