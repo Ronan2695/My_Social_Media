@@ -25,6 +25,7 @@ module.exports.destroy= function(req,res){
     Post.findById(req.params.id, function(err,post){
         //.id means converting the object id into string.
         //Checking if current users are same
+        // console.log(req.params.id);
         if(post.user == req.user.id){
             post.remove();
             Comment.deleteMany({post:req.params.id}, function(err){

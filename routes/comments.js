@@ -11,6 +11,9 @@ const commentsController = require('../controllers/comments_controller');
 //We are adding passport middleware check, so that users who are signed in are only allowed to comment.
 router.post('/create',passport.checkAuthentication, commentsController.create)
 
+//deleting comments
+router.get('/destroy/:id',passport.checkAuthentication,commentsController.destroy);
+
 
 
 module.exports= router;

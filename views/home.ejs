@@ -133,7 +133,13 @@
                          
             </div>
             <div id="comments-box">
-        
+                <% if (locals.user && locals.user.id == comment.user.id){ %>
+                
+                <small>
+                    <a href="/comments/destroy/<%=comment.id %>">X</a>
+                </small> 
+                
+                <% } %>  
                 <p id="cname"> <%= comment.user.name %> </p>
             
                     <p id="content"> <%= comment.content %> </p>     
