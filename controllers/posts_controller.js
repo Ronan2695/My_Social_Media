@@ -1,5 +1,6 @@
 //Controller for posts.
-const Post = require('../models/posts')
+const Post = require('../models/posts');
+const Comment = require('../models/comment');
 
 module.exports.create=function(req,res){
 
@@ -17,5 +18,22 @@ module.exports.create=function(req,res){
         return res.redirect('back');
     })
     
+}
+
+//Post deletion controller
+module.exports.destroy= function(req,res){
+    Post.findById(req.params.id, function(err,post){
+        //.id means converting the object id into string.
+        //Checking if current users are same
+        if(post.user == req.user.id){
+            post.remove();
+            Comment.deleteMany({post:req.params.id}, function(err){
+                return res.redirect('back');
+            });
+        }else{
+            return res.redirect('back')
+        }
+
+    });
 }
 

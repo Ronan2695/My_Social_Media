@@ -11,6 +11,8 @@ const postsController = require('../controllers/posts_controller')
 //We are adding passport middleware check, so that users who are signed in are only allowed to post.
 router.post('/create',passport.checkAuthentication, postsController.create)
 
+//routes for deleting post
+router.get('/destroy/:id',passport.checkAuthentication,postsController.destroy)
 
 
 module.exports= router;

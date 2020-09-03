@@ -101,6 +101,11 @@
 		<!-- User Posts -->
 		 <% for(post of posts) {%> 
 		<div id="user-post-container">
+            <% if (locals.user && locals.user.id == post.user.id){ %>
+            <small>
+                <a href="/posts/destroy/<%=post.id %>">X</a>
+            </small>     
+            <% } %>  
 
 			<div id="user-name">
 					
@@ -112,8 +117,8 @@
 
 				<p> <%= post.content %> </p>
 
-			</div>
-
+            </div>
+           
 		    <form action="/comments/create" method="POST">
 
                    <input type="text" id="comments" name="content" placeholder="Add Comments" required>
