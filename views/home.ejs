@@ -75,7 +75,7 @@
 <body>
 
 	<div id="external-post-container">
-
+    <!--Creating Posts  -->
 		 <% if(locals.user){ %> 
 		<div id="post-list-container">
 
@@ -99,18 +99,19 @@
 			<%}%> 
 
 		<!-- User Posts -->
-		 <% for(post of posts) {%> 
+         <% for(post of posts) {%> 
+        <!-- Displaying posts -->
 		<div id="user-post-container">
             <% if (locals.user && locals.user.id == post.user.id){ %>
             <small>
-                <a href="/posts/destroy/<%=post.id %>">X</a>
+                <a href="/posts/destroy/<%=post.id %>">x</a>
             </small>     
             <% } %>  
 
 			<div id="user-name">
-					
-				<span> <%=post.user.name %> </span>
-
+           	
+				<span> <a href="/users/profile"> <%=post.user.name %> </a> </span>
+            
 			</div>
 
 			<div id="user-post">
@@ -132,11 +133,12 @@
              <% for(comment of post.comments ){%>
                          
             </div>
+            <!-- Creating and Displaying comments -->
             <div id="comments-box">
                 <% if (locals.user && locals.user.id == comment.user.id){ %>
                 
                 <small>
-                    <a href="/comments/destroy/<%=comment.id %>">X</a>
+                    <a href="/comments/destroy/<%=comment.id %>">x</a>
                 </small> 
                 
                 <% } %>  
@@ -153,8 +155,8 @@
           
 
           <!-- Displaying Users -->
-
-        <section id="user-friends">
+          <% if (locals.user){ %>
+        <div id="user-friends">
             <h4> Friends </h4>
 
             <% for(u of all_users) { %>
@@ -163,8 +165,8 @@
                 </p>
 
             <% } %>
-        </section>
-
+            </div>
+            <% } %> 
 </body>
 
 

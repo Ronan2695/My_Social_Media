@@ -65,7 +65,14 @@
 
 #user-name span
 {
-    margin-left: 10px;
+	margin-left: 10px;
+	text-decoration:none;
+}
+
+#user-name  a
+{
+
+	text-decoration:none;
 }
 
 #user-post
@@ -77,11 +84,15 @@
 	margin-top: 7px;
 
 }
-
+/* User post container */
 #user-post-container form
 {
 	margin-top: 20px;
 	margin-left: 10px;
+}
+#user-post-container a
+{
+	text-decoration:none;
 }
 
 #comments
@@ -107,10 +118,37 @@
 {
 	margin-top:3px;
 	margin-left:8px;
+}
 
+#comments-box a
+{
+	text-decoration:none;
 }
 
 #content
 {
 	margin-left: 10px;
 } 
+
+#user-friends
+{
+	height: 200px;
+	width:200px;
+	border:1px solid black;
+	position: absolute;
+	top:9%;
+	left:85%;
+	box-shadow: 2px 2px 1px 0.3px #888888;
+}
+
+#user-friends h4
+{
+	margin-top:12px;
+	margin-left: 60px;
+}
+
+#user-friends a
+{
+	margin-left: 60px;
+	
+}
