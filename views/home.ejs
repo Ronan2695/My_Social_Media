@@ -77,7 +77,7 @@
 	<div id="external-post-container">
     <!--Creating Posts  -->
 		 <% if(locals.user){ %> 
-		<div id="post-list-container">
+		<div id="post-list-container" >
 
 			<div id="post-title">
 
@@ -134,7 +134,7 @@
                          
             </div>
             <!-- Creating and Displaying comments -->
-            <div id="comments-box">
+            <div id="comments-box" >
                 <% if (locals.user && locals.user.id == comment.user.id){ %>
                 
                 <small>
@@ -167,6 +167,9 @@
             <% } %>
             </div>
             <% } %> 
+
+
+<script src="js/home_posts.js"></script>
 </body>
 
 
