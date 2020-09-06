@@ -38,7 +38,12 @@ let storage = multer.diskStorage({
     filename: function (req, file, cb) {
       cb(null, file.fieldname + '-' + Date.now())
     }
-  })
+  });
+
+  //static methods
+  //single specifies only one file is going to be sent
+  userSchema.statics.uploadedAvatar = multer({storage:storage}).single('avatar')
+  userSchema.statics.avatarPath = AVATAR_PATH;
 
 
 //We are telling that this is a model in the database
