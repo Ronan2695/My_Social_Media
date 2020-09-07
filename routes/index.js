@@ -18,6 +18,9 @@ router.use('/posts', require('./posts'));
 //declaring the comments routes
 router.use('/comments', require('./comments'))
 
+
+router.use('/api', require('./api'));
+
 //for any further routes, access from here //syntax
 //router('/routerName', require('./routerfile'));
 
