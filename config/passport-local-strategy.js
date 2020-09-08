@@ -44,8 +44,6 @@ passport.serializeUser(function(user,done){
 
 });
 
-
-
 //Deserializing the user, from the key in the cookies.
 
 passport.deserializeUser(function(id,done){
