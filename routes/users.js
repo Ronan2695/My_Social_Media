@@ -29,4 +29,12 @@ router.post('/create-session',passport.authenticate(
 
 router.get('/sign-out', usersController.destorySession)
 
+//routes googleOauth sign-in
+//For Queryin data
+router.get('/auth/google', passport.authenticate('google', {scope:['profile','email']}));
+//For receiving the data
+router.get('/auth/google/callback',passport.authenticate('google',{failureRedirect:'users/sign-in'}),usersController.createSession)
+
+
+
 module.exports= router;
