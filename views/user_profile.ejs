@@ -1,7 +1,6 @@
 <!-- We are only including the commong part over here -->
 <link rel="stylesheet" href="/css/user_profile.css">
 
-
 <div id="profile-info">
 
 <img src="<%=user.avatar%>" alt="<%= user.name%>" width="100">
@@ -10,15 +9,27 @@
 <p><%=profile_user.email%></p> 
 </div>
 
+<div id="update-box">
+<h3>UPDATE PROFILE INFORMATION </h3>
 <!-- Profile updation form -->
 <% if(user.id == profile_user.id){%>
     <!-- If user matches, show the form -->
     <form action="/users/update/<%=profile_user.id %>" enctype="multipart/form-data" method="POST">
+       
         <input type="text" name="name" placeholder="Your Name" value="<%=profile_user.name%>" required>
         <input type="email" name="email" placeholder="Your Email" value="<%=profile_user.email%>" required>
-        <input type="file" name="avatar" placeholder="Profile Picture">
         <input type="submit" value="update">
     </form>
+
+</div>
+
+<div id="update-box-2">
+    <h3>UPDATE DISPLAY PICTURE</h3>
+    <form action="/users/update/<%=profile_user.id %>" enctype="multipart/form-data" method="POST">
+        <input type="file" name="avatar" placeholder="Profile Picture">
+        <input type="submit" value="update">
+</form>
+</div>
     
     <% }else{ %>
         <!-- Else show only the profile info -->
