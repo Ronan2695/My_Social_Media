@@ -1,10 +1,14 @@
 <!-- We are only including the commong part over here -->
 <link rel="stylesheet" href="/css/user_profile.css">
 
+
+<div id="profile-info">
+
 <img src="<%=user.avatar%>" alt="<%= user.name%>" width="100">
 
 <p><%=profile_user.name%></p>
 <p><%=profile_user.email%></p> 
+</div>
 
 <!-- Profile updation form -->
 <% if(user.id == profile_user.id){%>

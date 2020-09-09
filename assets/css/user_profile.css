@@ -2,3 +2,12 @@ body
 {
     background-color: lightblue;
 }
+
+#profile-info
+{
+    height: 200px;
+    width: 200px;
+    border:1px solid black;
+    margin: 0 auto;
+    font-style:sans-serif;
+}

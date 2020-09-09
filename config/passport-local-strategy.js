@@ -63,7 +63,7 @@ passport.deserializeUser(function(id,done){
 //check if user is authenticated.(This function will be used as a middleware)
 passport.checkAuthentication = function(req,res,next){
     //if the user is signed in, then pass on the request to next function( controller's action)
-    console.log('1')
+    // console.log('1')
     if(req.isAuthenticated()){
         return next();
     }
@@ -73,7 +73,7 @@ passport.checkAuthentication = function(req,res,next){
 
 //setting the user for the views.(middleware)
 passport.setAuthenticatedUser = function(req,res,next){
-    console.log('2')
+    // console.log('2')
     if(req.isAuthenticated()){
         //req.user contains the current signed in user from the session cookie and we are just send this to the locals for the views
         res.locals.user = req.user

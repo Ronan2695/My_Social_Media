@@ -8,10 +8,10 @@ let transporter=  nodemailer.createTransport({
     service:'gmail',
     host:'smtp.gmail.com',
     port:587,
-    secure:'False',
+    secure: false,
     auth:{
-        user:'rhtkmr000',
-        pass:'AdrollNocEngineer@2695'
+        user:'blackmantasmiles@gmail.com',  // ye correct h ? yes it is correct bro
+        pass:'IOpex@123'
     }
 
 });
