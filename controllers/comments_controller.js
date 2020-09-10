@@ -31,8 +31,8 @@ const Post = require('../models/posts');
 // const { createPrivateKey } = require('crypto');
 //Controller mailer action
 const commentsMailer = require('../mailers/comments_mailer')
-// const queue = require('../config/kue');
-// const commentsEmailWorker = require('../workers/comment_email_worker');
+const queue = require('../config/kue');
+const commentEmailWorker = require('../workers/comment_email_worker');
 
 //posting a comment
 module.exports.create =async function(req,res){
@@ -52,7 +52,15 @@ module.exports.create =async function(req,res){
             post.save();
 
                 comment = await comment.populate('user', 'name email').execPopulate();
-                commentsMailer.newComment(comment);
+                // commentsMailer.newComment(comment);
+                let job = queue.create('emails', comment).save(function(err){
+                    if(err)
+                    {
+                        console.log('Error in creating a queue');
+                        return
+                    }
+                    console.log('job queued',job.id);
+                })
             if(req.xhr){
 
                     return res.status(200).json({
