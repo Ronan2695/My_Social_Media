@@ -1,0 +1,76 @@
+
+#sign-up-box
+{
+
+	height: 480px;
+	width: 500px;
+	border:1px solid rgb(48 115 171);
+	margin: 0 auto;
+	margin-top: 80px;
+    background-color: rgb(48 115 171);
+
+}
+
+#nam
+{
+
+	color: white;
+	position: absolute;
+	top:20%;
+	left:38%;
+	font-size:17px;
+	font-weight: bolder;
+
+}
+
+#ema2
+{
+	color: white;
+	position: absolute;
+	top:31%;
+	left:38%;
+	font-size:17px;
+	font-weight: bolder;
+}
+
+#pass2
+{
+	color: white;
+	position: absolute;
+	top:41%;
+	left:38%;
+	font-size:17px;
+	font-weight: bolder;
+
+}
+
+#pass3
+{
+	color: white;
+	margin-top:285px;
+	margin-left:80px;
+	font-weight: bolder;
+
+}
+
+#pass2 p
+{
+	margin-top: 25px;
+}
+
+#sub2
+{
+	position: absolute;
+	top:43%;
+	left:38%;
+	margin-top:200px;
+	height: 30px;
+	width: 350px;	
+
+}
+
+.size
+{
+	width:340px; 
+	height: 30px;
+}

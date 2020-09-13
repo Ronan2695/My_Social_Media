@@ -5,6 +5,8 @@ const logger = require('morgan')
 //for creating cookies
 const cookieParser = require('cookie-parser');
 const app= express();
+//helper function
+require('./config/view-helpers')(app);
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
@@ -97,8 +99,3 @@ app.listen(port, function(err){
     console.log(`Server is running on port:${port}`)
 });
 
-//mongo network error,..this error u faced earlier also?, no, this is the first time
-//try running in development modeo once..
-//it comes because the server takes time to start..thets why its connection time out..pls check ur internet connection
-//My internet connection is good, I will try troubleshooting this mongodb error and get back to you
-//okay sure..thank you..np
