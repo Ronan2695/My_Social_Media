@@ -1,0 +1,9 @@
+This is a sample social media web application based on the MEAN STACK(MongoDB, ExpressJS, NodeJS, AngularJS).
+The functionality of the webapp only includes creating posts, adding comments and also a profile page for different users.
+Functionaity of the web app
+   >Authentication using passportjs and Social Authentication using Google
+   >Uploading a Profile picture.
+   >Updating your profile information like email and name
+   >Integation of a small API for fetching posts and comments(tested using POSTMAN not integrated with front-end framework yet).
+   >Integration of a chatting engine, You will be able to chat with multiple users.
+   >Integration of Mailer. Mailing the specified user about comments posted by different users using google's smtp server
