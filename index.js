@@ -1,5 +1,7 @@
 const express = require('express');
 const env= require('./config/environment')
+//for logging
+const logger = require('morgan')
 //for creating cookies
 const cookieParser = require('cookie-parser');
 const app= express();
@@ -31,9 +33,12 @@ app.use(cookieParser());
 
 //Setting up the static file
 console.log(path.join(__dirname , env.asset_path))
-app.use(express.static(path.join(__dirname , env.asset_path)));//change CODEIAL ASSET PATH TO /assets OK//onlu /assets as it was earlier..as u havnt made public folder // ok I changed it to ./public/asset fine right?..no change to /assets ..as it was beforeok
+app.use(express.static(path.join(__dirname , env.asset_path)));
 //make the uploads path available to the browser
-app.use('/uploads',express.static(__dirname + '/uploads'));//it take a lot time to start the server.., yeah 
+app.use('/uploads',express.static(__dirname + '/uploads'));
+
+//Logger
+app.use(logger(env.morgan.mode, env.morgan.options));
 
 //using the express layout module
 app.use(expressLayouts);

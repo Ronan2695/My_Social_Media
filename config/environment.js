@@ -1,5 +1,19 @@
 // Commong file for accessing keys and env varibles, only view to developer
 //Development Environment
+
+const fs = require('fs');
+const rfs= require('rotating-file-stream');
+const path= require('path');
+
+const logDirectory = path.join(__dirname,'../production_logs');
+fs.existsSync(logDirectory)|| fs.mkdirSync(logDirectory);
+
+const accessLogStream= rfs.createStream('access.log',{
+    interval:'1d',
+    path:logDirectory
+})
+
+
 const development =
 {
     name:'development',
@@ -19,7 +33,11 @@ const development =
     google_client_id:"356679320092-gd5q75ah3lrsmqs70fg9uklfsurortfp.apps.googleusercontent.com",
     google_client_secret:"vqtT5awyNvkSaqM4f-T4w18n",
     google_call_back_url:"http://localhost:8000/users/auth/google/callback",
-    jwt_secret:'codeial'
+    jwt_secret:'codeial',
+    morgan:{
+        mode:'dev',
+        options:{stream:accessLogStream}
+    }
 }
 
 const production=
@@ -41,7 +59,11 @@ const production=
     google_client_id:process.env.CODEIAL_GOOGLE_CLIENT_ID,
     google_client_secret:process.env.CODEIAL_GOOGLE_CLIENT_SECRET,
     google_call_back_url:process.env.CODEIAL_CALL_BACK_URL,
-    jwt_secret:process.env.CODEIAL_JWT_SECRET
+    jwt_secret:process.env.CODEIAL_JWT_SECRET,
+    morgan:{
+        mode:'combined',
+        options:{stream:accessLogStream}
+    }
 
 }
 
