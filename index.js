@@ -1,4 +1,5 @@
 const express = require('express');
+const env= require('./config/environment')
 //for creating cookies
 const cookieParser = require('cookie-parser');
 const app= express();
@@ -22,16 +23,17 @@ const chatServer = require('http').Server(app);
 const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('Chat server is listening on port 5000')
-
+ const path=require('path');
 
 app.use(express.urlencoded());
 
 app.use(cookieParser());
 
 //Setting up the static file
-app.use(express.static('./assets'));
+console.log(path.join(__dirname , env.asset_path))
+app.use(express.static(path.join(__dirname , env.asset_path)));//change CODEIAL ASSET PATH TO /assets OK//onlu /assets as it was earlier..as u havnt made public folder // ok I changed it to ./public/asset fine right?..no change to /assets ..as it was beforeok
 //make the uploads path available to the browser
-app.use('/uploads',express.static(__dirname + '/uploads'));
+app.use('/uploads',express.static(__dirname + '/uploads'));//it take a lot time to start the server.., yeah 
 
 //using the express layout module
 app.use(expressLayouts);
@@ -49,7 +51,7 @@ app.set('views','./views');
 app.use(session({
     name:'codeial',
     //todo change secret before deploying.
-    secret:'blahsomething',
+    secret:env.session_cookie_key,
     saveUninitialized: false,
     resave:false,
     cookie:{
@@ -89,3 +91,9 @@ app.listen(port, function(err){
     
     console.log(`Server is running on port:${port}`)
 });
+
+//mongo network error,..this error u faced earlier also?, no, this is the first time
+//try running in development modeo once..
+//it comes because the server takes time to start..thets why its connection time out..pls check ur internet connection
+//My internet connection is good, I will try troubleshooting this mongodb error and get back to you
+//okay sure..thank you..np
